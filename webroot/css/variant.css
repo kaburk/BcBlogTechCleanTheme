@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* ==========================================================================
+   BcBlogTechCleanTheme : baserCMS5 x
+
+   スタイル：すっきり（Clean Paper）
+   薄いグレーの地に、本文を白い紙として一段明るく浮かせる。
+   4色はテーマ設定（config.css の --theme-*）が優先。ここの値は、テーマ設定が空のときの代わりの値
+   ========================================================================== */
+:root {
+	--main: var(--theme-main, #2563eb);   /* メイン：ボタン・強調・アクセント */
+	--sub: var(--theme-sub, #0f172a);     /* サブ：見出しの文字・濃い背景 */
+	--link: var(--theme-link, #2563eb);   /* リンク */
+	--hover: var(--theme-hover, #1d4ed8); /* リンクのホバー */
+	--font-body: "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+	--font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+	--bg: #f1f3f6;
+	--radius: 8px;
+}
+
+/* フッターはサブ色の濃い面 */
+.bt-footer { background: var(--sub); border-top: 0; color: var(--on-sub); }
+.bt-footer .bt-footer-name, .bt-site .bt-footer .bt-footer-nav a { color: var(--on-sub); }
+.bt-footer .bt-footer-desc, .bt-footer .bt-copyright { color: color-mix(in oklab, var(--on-sub) 72%, var(--sub)); }
+.bt-site .bt-footer .bt-footer-nav a:hover { color: var(--on-sub); }
+[data-theme="dark"] .bt-footer { background: color-mix(in oklab, var(--sub) 70%, black); border-top: 1px solid var(--line); }
+
+/* 本文の見出し：h2 は左の太い線（bge_style.css の標準どおり） */
+.bt-post-body h2 { border-left-width: 5px; }
